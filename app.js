@@ -6,6 +6,7 @@ const httpStatusText = require("./utils/httpsStatusText");
 const conDb = require("./config/db");
 const appError = require("./utils/appError");
 const path = require("node:path");
+const port = process.env.PORT || 3000;
 
 const coursesRouter = require("./routes/courses.route");
 const usersRouter = require("./routes/users.route");
@@ -47,6 +48,6 @@ app.use((error, req, res, next) => {
 });
 
 // run server
-app.listen(process.env.PORT, "localhost", () => {
+app.listen(port, "localhost", () => {
   console.log("hello from Node js");
 });
